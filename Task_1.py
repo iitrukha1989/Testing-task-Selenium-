@@ -12,19 +12,19 @@ def yandex_Search(url_Value, site_Value):
 
     search_Box = driver.find_element(By.XPATH, '//*[@id="text"]')
     search_Box.clear()
-    search_Box.send_keys('Тензор')
+    search_Box.send_keys('Новосибирск')
     locator = (By.CSS_SELECTOR, '#text')
     search_Box = WebDriverWait(driver, 3).until(
         EC.visibility_of_element_located(locator))
     time.sleep(2)
     assert search_Box
     search_Box.send_keys(Keys.RETURN)
-    assert 'Тензор' in driver.page_source
+    assert 'Новосибирск' in driver.page_source
 
     search_Word = driver.find_elements(By.CSS_SELECTOR,
                                        '#search-result > .serp-item a.link > b')
     value_Search = [elem.text.strip() for elem in search_Word[:5]]
-    assert 'tensor.ru' in value_Search
+    assert 'novo-sibirsk.ru' in value_Search
 
     time.sleep(2)
     driver.close()
@@ -32,5 +32,4 @@ def yandex_Search(url_Value, site_Value):
 
 
 # url_Value = "https://www.yandex.ru/"
-# site_Value = 'tensor.ru'
 # yandex_Search(url_Value, site_Value)
