@@ -14,7 +14,7 @@ from Task_2 import yandex_Image
 
 class yandex_Test(unittest.TestCase):
     def test_01(self):
-        yandex_Search("https://www.yandex.ru/", 'Тензор')
+        yandex_Search("https://www.yandex.ru/", 'Новосибирск')
 
     def test_02(self):
         yandex_Image("https://www.yandex.ru/")
